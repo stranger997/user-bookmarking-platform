@@ -66,4 +66,19 @@ class BookmarksController extends Controller
         // Redirect to the index page after updating the bookmark
         return redirect(route('bookmarks.index'))->with('success', 'Bookmark updated successfully');
     }
+
+    public function deleteConfirmation (Bookmark $bookmark)
+    {
+        // Show the form for deleting an existing bookmark
+        return view('bookmarks.delete', compact('bookmark'));
+
+    }
+    public function destroy(Bookmark $bookmark)
+    {
+        //Delete the selected bookmark
+        $bookmark->delete();
+    
+        // Redirect to the index page after deleting the bookmark
+        return redirect('/bookmarks');
+    }
 }

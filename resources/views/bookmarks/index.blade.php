@@ -44,6 +44,7 @@
                                         <td class="py-2 px-4 border">{{ $bookmark->updated_at->format('d-m-Y H:i:s') }}</td>
                                         <td class="py-2 px-4 border">
                                             <x-secondary-button  onclick="window.location='{{ route('bookmarks.edit', $bookmark->id) }}'">Edit</x-secondary-button>
+                                            <x-danger-button  onclick="window.location='{{ route('bookmarks.delete.confirmation', $bookmark->id) }}'">Delete</x-danger-button>
                                         </td>
                                     </tr>
                                 @endforeach
