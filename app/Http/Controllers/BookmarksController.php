@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bookmark;
+use Illuminate\Support\Facades\Gate;
 
 class BookmarksController extends Controller
 {
@@ -75,10 +76,16 @@ class BookmarksController extends Controller
     }
     public function destroy(Bookmark $bookmark)
     {
-        //Delete the selected bookmark
-        $bookmark->delete();
+        // Check if the authenticated user is the owner of the bookmark
+        if (Gate::allows('deleteBookmark', $bookmark)) {
+            // Delete the bookmark
+            $bookmark->delete();
     
-        // Redirect to the index page after deleting the bookmark
-        return redirect('/bookmarks');
+            // Redirect to the index page after deleting the bookmark
+            return redirect('/bookmarks');
+        }
+    
+        // If the user is not authorized, return to the same page with an error message
+        return redirect()->back()->with('error', 'Unauthorized to delete this bookmark');
     }
 }

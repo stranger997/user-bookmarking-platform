@@ -42,9 +42,18 @@ php artisan key:generate
 ```
 Migrate the database
 ```
+php artisan migrate 
+```
+Or use this to migrate and use the seeder file
+```
 php artisan migrate --seed
 ```
 Run the service
 ```
 php artisan serve
 ```
+
+### Seeder users
+un: user1@example.com pw: password <br />
+un: user2@example.com pw: password <br />
+un: user3@example.com pw: password <br />

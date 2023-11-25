@@ -29,6 +29,9 @@
                     </form>
                 </div>
             </div>
+            @if(session('error'))
+                <div class="mt-1 text-sm" style="color: red;">{{ session('error') }}</div>
+            @endif
         </div>
     </div>
 </x-app-layout>
