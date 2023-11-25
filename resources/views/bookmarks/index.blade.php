@@ -30,6 +30,7 @@
                                     <th class="py-2 px-4 border">User</th>
                                     <th class="py-2 px-4 border">Created At</th>
                                     <th class="py-2 px-4 border">Updated At</th>
+                                    <th class="py-2 px-4 border">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,6 +42,9 @@
                                         <td class="py-2 px-4 border">{{ $bookmark->user->name }}</td>
                                         <td class="py-2 px-4 border">{{ $bookmark->created_at->format('d-m-Y H:i:s') }}</td>
                                         <td class="py-2 px-4 border">{{ $bookmark->updated_at->format('d-m-Y H:i:s') }}</td>
+                                        <td class="py-2 px-4 border">
+                                            <x-secondary-button  onclick="window.location='{{ route('bookmarks.edit', $bookmark->id) }}'">Edit</x-secondary-button>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

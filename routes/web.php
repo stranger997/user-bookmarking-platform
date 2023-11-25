@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [BookmarksController::class, 'index'])->name('bookmarks.index');
         Route::get('/create', [BookmarksController::class, 'create'])->name('bookmarks.create');
         Route::post('/', [BookmarksController::class, 'store'])->name('bookmarks.store');
+        Route::get('/{bookmark}/edit', [BookmarksController::class, 'edit'])->name('bookmarks.edit');
+        Route::put('/{bookmark}', [BookmarksController::class, 'update'])->name('bookmarks.update');
     });
 });
 

@@ -42,4 +42,28 @@ class BookmarksController extends Controller
         // Redirect to the index page after creating the bookmark
         return redirect('/bookmarks');
     }
+
+    public function edit(Bookmark $bookmark)
+    {
+        // Show the form for editing an existing bookmark
+        return view('bookmarks.edit', compact('bookmark'));
+    }
+
+    public function update(Request $request, Bookmark $bookmark)
+    {
+        // Validate the request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'url' => 'required|url|max:255',
+        ]);
+    
+        // Update the existing bookmark
+        $bookmark->update([
+            'title' => $request->input('title'),
+            'url' => $request->input('url'),
+        ]);
+    
+        // Redirect to the index page after updating the bookmark
+        return redirect(route('bookmarks.index'))->with('success', 'Bookmark updated successfully');
+    }
 }
