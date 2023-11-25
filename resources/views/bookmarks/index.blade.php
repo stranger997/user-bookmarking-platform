@@ -20,6 +20,10 @@
                         <x-primary-button  onclick="window.location='{{ route('bookmarks.create') }}'">{{ __('Add new Bookmark') }}</x-primary-button>
                     </div>
 
+                    @if(session('success'))
+                        <div class="mt-1 text-sm" style="color: green;">{{ session('success') }}</div>
+                    @endif
+
                     <div class="mt-6 space-y-6">
                         <table class="bookmark-table w-full border-collapse text-center">
                             <thead>
