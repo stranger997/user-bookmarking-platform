@@ -18,14 +18,14 @@ Download (A new folder will be created inside the parent folder)
 ```
 git clone https://github.com/stranger997/user-bookmarking-platform.git
 ```
+Install dependencies
 ```
 cd user-bookmarking-platform
 ```
-Install dependencies
 ```
 composer install
 ```
-Rename .env.example to .env and modify
+Rename .env.example to .env and modify as follows
 * Application name (optional)
 ```
 APP_NAME="user-bookmarking-platform"
@@ -42,7 +42,7 @@ php artisan key:generate
 ```
 Migrate the database
 ```
-php artisan migrate
+php artisan migrate --seed
 ```
 Run the service
 ```
