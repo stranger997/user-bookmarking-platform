@@ -14,9 +14,25 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'User1',
+            'email' => 'user1@example.com',
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'User2',
+            'email' => 'user2@example.com',
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'User3',
+            'email' => 'user3@example.com',
+        ]);
+
+        $this->call(
+            [
+                BookmarkSeeder::class,
+            ]
+        );
     }
 }
