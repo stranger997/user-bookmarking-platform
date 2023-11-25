@@ -24,11 +24,17 @@ Route::get('/', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::group(['prefix' => 'profile'], function() {
+        Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
 
-    Route::get('/bookmarks', [BookmarksController::class, 'index'])->name('bookmarks.index');
+    Route::group(['prefix' => 'bookmarks'], function() {
+        Route::get('/', [BookmarksController::class, 'index'])->name('bookmarks.index');
+        Route::get('/create', [BookmarksController::class, 'create'])->name('bookmarks.create');
+        Route::post('/', [BookmarksController::class, 'store'])->name('bookmarks.store');
+    });
 });
 
 require __DIR__.'/auth.php';

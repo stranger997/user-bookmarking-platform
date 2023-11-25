@@ -16,6 +16,10 @@
                         </h2>
                     </header>
 
+                    <div class="flex items-center gap-4, mt-6 space-y-6">
+                        <x-primary-button  onclick="window.location='{{ route('bookmarks.create') }}'">{{ __('Add new Bookmark') }}</x-primary-button>
+                    </div>
+
                     <div class="mt-6 space-y-6">
                         <table class="bookmark-table w-full border-collapse text-center">
                             <thead>
