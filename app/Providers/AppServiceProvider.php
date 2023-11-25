@@ -21,11 +21,11 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             'App\Services\Interfaces\BookmarkServiceInterface',
-             'App\Services\Implementations\BookmarkService',
-         );
+            'App\Services\Implementations\BookmarkService',
+        );
          $this->app->bind(
              'App\Repositories\Interfaces\BookmarkRepositoryInterface',
-              'App\Repositories\Implementations\BookmarkRepository',
-          );
+             'App\Repositories\Implementations\BookmarkRepository',
+         );
     }
 }

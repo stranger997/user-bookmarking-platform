@@ -18,7 +18,7 @@ class BookmarkSeeder extends Seeder
     public function run()
     {
         DB::beginTransaction();
-        try{
+        try {
             $userIds = [1, 2, 3];
 
             for ($i = 0; $i < 100; $i++) {
@@ -36,7 +36,7 @@ class BookmarkSeeder extends Seeder
             }
 
             DB::commit();
-        } catch (\Throwable $th){
+        } catch (\Throwable $th) {
             DB::rollBack();
         }
     }

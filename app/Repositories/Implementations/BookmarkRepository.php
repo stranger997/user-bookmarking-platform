@@ -54,5 +54,4 @@ class BookmarkRepository implements BookmarkRepositoryInterface
     {
         $bookmark->delete();
     }
-
 }

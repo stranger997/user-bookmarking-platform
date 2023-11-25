@@ -67,5 +67,4 @@ class BookmarkService implements BookmarkServiceInterface
     {
         $this->bookmarkRepository->delete($bookmark);
     }
-
 }
