@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Models\Bookmark;
 use App\Policies\BookmarkPolicy;
-use Illuminate\Support\Facades\Gate;
+//use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider

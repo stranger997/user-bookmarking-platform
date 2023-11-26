@@ -3,10 +3,14 @@
 </div>
 
 ## Prerequisities
-Using a windows machine you will need:
+What is used to run
+#### XAMPP
+* PHP v8.1.12 
 * MySQL Database
-* Web Server
-* Composer
+* Apache
+#### Composer
+#### Node.js v18.12.1
+#### npm v9.4.1
 
 ## Installation
 Download (A new folder will be created inside the parent folder)
@@ -27,7 +31,7 @@ APP_NAME="user-bookmarking-platform"
 ```
 * Database settings (example)
 ```
-DB_DATABASE="ubpdb"
+DB_DATABASE="example_db"
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -43,10 +47,18 @@ Or use this to migrate and use the seeder file
 ```
 php artisan migrate --seed
 ```
-Run the service
+Install node dependencies
+```
+npm install
+```
+Run services
 ```
 php artisan serve
 ```
+```
+npm run dev
+```
+#### The website is hosted by default on: http://localhost:8000
 
 ### Seeder users
 un: user1@example.com pw: password <br />
