@@ -6,7 +6,7 @@ use App\Models\Bookmark;
 use App\Services\Interfaces\BookmarkServiceInterface;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\BookmarkRequest;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class BookmarksController extends Controller
 {
